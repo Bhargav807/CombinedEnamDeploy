@@ -10,11 +10,16 @@ import CommodityRoutes from "./routes/CommodityRoutes.js"
 import UserRoutes from "./routes/UserRoutes.js"
 import EquipmentRoutes from "./routes/EquipmentRoutes.js"
 import path from 'path';
+import { fileURLToPath } from 'url'
 //configure environment
 dotenv.config();
 
 //database config
 connectDB();
+
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //rest object
 const app = express();
